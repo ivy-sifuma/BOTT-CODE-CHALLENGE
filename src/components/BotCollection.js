@@ -17,6 +17,6 @@ function BotCollection() {
       </div>
     </div>
   );
-}
+}}
 
 export default BotCollection;

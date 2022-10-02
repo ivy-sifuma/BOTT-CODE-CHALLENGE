@@ -81,6 +81,6 @@ function BotCard({ bot }) {
       </div>
     </div>
   );
-}
+}}
 
 export default BotCard;
