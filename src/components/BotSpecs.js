@@ -9,7 +9,9 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotSpecs({ bot }) {
+function BotSpecs({ bot, setActiveBot, setBotArmy}) {
+
+
   return (
     <div className="ui segment">
       <div className="ui two column centered grid">

@@ -9,7 +9,7 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotCard({ bot }) {
+
   function BotCard({ bot, botArmy, setBotArmy, setBotData, setActiveBot }) {
     function handleDelete() {
       fetch(`http://localhost:8002/bots/${bot.id}`, {
@@ -81,6 +81,6 @@ function BotCard({ bot }) {
       </div>
     </div>
   );
-}}
+}
 
 export default BotCard;
