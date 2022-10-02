@@ -11,6 +11,10 @@ const botTypeClasses = {
 
 function BotSpecs({ bot, setActiveBot, setBotArmy}) {
 
+  function handleEnlist(){
+    setBotArmy(army => [...army, bot])
+    setActiveBot(null)
+  }
 
   return (
     <div className="ui segment">
@@ -56,6 +60,7 @@ function BotSpecs({ bot, setActiveBot, setBotArmy}) {
               className="ui button fluid"
               onClick={() =>
                 console.log("connect this to a function that shows all bots")
+                onClick={() => setActiveBot(null)}
               }
             >
               Go Back
@@ -67,6 +72,7 @@ function BotSpecs({ bot, setActiveBot, setBotArmy}) {
                   "connect this to a function that adds this bot to your bot army list"
                 )
               }
+              onClick={handleEnlist}
             >
               Enlist
             </button>
