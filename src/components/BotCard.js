@@ -10,6 +10,28 @@ const botTypeClasses = {
 };
 
 function BotCard({ bot }) {
+  function BotCard({ bot, botArmy, setBotArmy, setBotData, setActiveBot }) {
+    function handleDelete() {
+      fetch(`http://localhost:8002/bots/${bot.id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then(() => {
+          setBotData((bots) => bots.filter((botArm) => botArm.id !== bot.id))
+          alert('Bot deleted')
+        }
+        );
+    }
+  
+    function handleClick() {
+      if (botArmy.find((botArm) => botArm.id === bot.id)) {
+        setBotArmy((army) => army.filter((botArm) => botArm.id !== bot.id));
+      } else {
+        setActiveBot(bot)
+        //setBotArmy((army) => [...army, bot]);
+  
+      }
+    }
   return (
     <div className="ui column">
       <div
