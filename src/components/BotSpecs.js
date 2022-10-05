@@ -58,21 +58,16 @@ function BotSpecs({ bot, setActiveBot, setBotArmy}) {
             </div>
             <button
               className="ui button fluid"
-              onClick={() => setActiveBot (null)}
+              onClick={() => 
                 console.log("connect this to a function that shows all bots")
-                
+              }
                 
               Go Back
               
 
-             <button
-              className="ui button fluid"
-              onClick={() =>
-                console.log(
-                  "connect this to a function that adds this bot to your bot army list"
-                )
-              }
-              onClick={handleEnlist}
+             
+             
+              
             >
               Enlist
             </button>
