@@ -61,7 +61,7 @@ function BotSpecs({ bot, setActiveBot, setBotArmy}) {
               onClick={() =>
                 console.log("connect this to a function that shows all bots")
                 onClick={() => setActiveBot(null)}
-              }
+              
             >
               Go Back
             </button>
