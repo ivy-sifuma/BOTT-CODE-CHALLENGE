@@ -15,7 +15,7 @@ function BotSpecs({ bot, setActiveBot, setBotArmy}) {
     setYourBots(bts => [...bts, bot])
     setActiveBot(null)
   }
-function BotSpecs({ bot}) 
+ 
   return (
     <div className="ui segment">
       <div className="ui two column centered grid">
