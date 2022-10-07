@@ -9,13 +9,14 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotSpecs({ bot, setActiveBot, setBotArmy}) {
+function BotSpecs({ bot,setActiveBot, setYourBots}) {
 
   function handleBotEnlist(){
-    setYourBots(bts => [...bts, bot])
+    setYourBots (bts =>[...bts,bot])
     setActiveBot(null)
   }
- 
+
+function BotSpecs({ bot}) {
   return (
     <div className="ui segment">
       <div className="ui two column centered grid">
@@ -56,17 +57,16 @@ function BotSpecs({ bot, setActiveBot, setBotArmy}) {
                 </div>
               </div>
             </div>
-            <button>
+            <button
               className="ui button fluid"
-              
+            
               onClick={() => BotsPage()
                 // console.log("connect this to a function that shows all bots")
-                setActiveBot(null)} 
+                setActiveBot(null)}
               
-              
-              
-            
+            >
               Go Back
+              
             </button>
             <button
               className="ui button fluid"
@@ -76,16 +76,16 @@ function BotSpecs({ bot, setActiveBot, setBotArmy}) {
                 //   "connect this to a function that adds this bot to your bot army list"
                 // )
               }
-            >  
+            >
               Enlist
-              </button>
-            
+            </button>
           </div>
         </div>
       </div>
-      </div>
-  
-  );
-}
+    </div>
 
+  );
+            
+}
+}
 export default BotSpecs;
