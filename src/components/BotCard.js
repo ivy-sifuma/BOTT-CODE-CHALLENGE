@@ -1,4 +1,5 @@
 import React from "react";
+
 const botTypeClasses = {
   Assault: "icon military",
   Defender: "icon shield",
@@ -8,34 +9,29 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotCard({ bot,
-  addBotToArmy,
-  onDelete,
-  removeBotFromArmy,
-  deleteBot,
-  isInArmy = false,
-  handleBot
- }) {
-
-  function handleBotDelete(){
-    fetch(`http://localhost:8002/bots/${bot.id}`,{
-      method:"DELETE"
+function BotCard({ bot, botArmy, setBotArmy, setBotData }) {
+  function handleDelete() {
+    fetch(`http://localhost:8002/bots/${bot.id}`, {
+      method: "DELETE",
     })
-    .then((res) => res.json())
-    .then(()=>onDelete(bot))
+      .then((res) => res.json())
+      .then(() => {
+        setBotData((bots) => bots.filter((botArm) => botArm.id !== bot.id));
+        alert("Bot Deleted!");
+      });
+  }
+
+  function handleClick() {
+    if (botArmy.find((botArm) => botArm.id === bot.id)) {
+      setBotArmy((army) => army.filter((botArm) => botArm.id !== bot.id));
+    } else {
+      setBotArmy((army) => [...army, bot]);
+    }
   }
 
   return (
     <div className="ui column">
-      <div
-        className="ui card"
-        key={bot.id}
-        onClick={() => {
-          !isInArmy && addBotToArmy(bot);
-          isInArmy && handleBot(bot);
-          isInArmy && removeBotFromArmy(bot);
-        }}
-      >
+      <div className="ui card" key={bot.id} onClick={handleClick}>
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
         </div>
@@ -53,6 +49,7 @@ function BotCard({ bot,
             <i className="icon heartbeat" />
             {bot.health}
           </span>
+
           <span>
             <i className="icon lightning" />
             {bot.damage}
@@ -63,14 +60,7 @@ function BotCard({ bot,
           </span>
           <span>
             <div className="ui center aligned segment basic">
-              <button
-                className="ui mini red button"
-                
-                onClick={()=>deleteBot(bot)}
-                // {() =>
-                //   console.log("add code to connect event listener")
-                // }
-              >
+              <button className="ui mini red button" onClick={handleDelete}>
                 x
               </button>
             </div>
