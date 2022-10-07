@@ -9,12 +9,7 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotSpecs({ bot}) {
 
-  function handleBotEnlist(){
-    setYourBots (bts =>[...bts,bot])
-    setActiveBot(null)
-  }
 
 function BotSpecs({ bot}) {
   return (
@@ -87,5 +82,5 @@ function BotSpecs({ bot}) {
   );
             
 }
-}
+
 export default BotSpecs;
