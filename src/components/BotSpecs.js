@@ -9,7 +9,7 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotSpecs({ bot,setActiveBot, setYourBots}) {
+function BotSpecs({ bot}) {
 
   function handleBotEnlist(){
     setYourBots (bts =>[...bts,bot])
@@ -61,8 +61,8 @@ function BotSpecs({ bot}) {
               className="ui button fluid"
             
               onClick={() => BotsPage()
-                // console.log("connect this to a function that shows all bots")
-                setActiveBot(null)}
+                console.log("connect this to a function that shows all bots")
+              }
               
             >
               Go Back
@@ -71,10 +71,10 @@ function BotSpecs({ bot}) {
             <button
               className="ui button fluid"
               onClick= {handleBotEnlist}
-              onClick={()=> addBotToArmy(bot)
-                // console.log(
-                //   "connect this to a function that adds this bot to your bot army list"
-                // )
+              onClick={()=> 
+                console.log(
+                  "connect this to a function that adds this bot to your bot army list"
+                )
               }
             >
               Enlist
