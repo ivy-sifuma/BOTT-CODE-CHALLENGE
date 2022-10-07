@@ -65,7 +65,7 @@ function BotCard({ bot,
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
-                onClick={handleBotDelete}
+                
                 onClick={()=>deleteBot(bot)}
                 // {() =>
                 //   console.log("add code to connect event listener")
