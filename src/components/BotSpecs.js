@@ -11,8 +11,8 @@ const botTypeClasses = {
 
 function BotSpecs({ bot, setActiveBot, setBotArmy}) {
 
-  function handleEnlist(){
-    setBotArmy(army => [...army, bot])
+  function handleBotEnlist(){
+    setYourBots(bts => [...bts, bot])
     setActiveBot(null)
   }
 
@@ -59,17 +59,30 @@ function BotSpecs({ bot, setActiveBot, setBotArmy}) {
             <button
               className="ui button fluid"
               
-                 
+              onClick={() => BotsPage()
+                // console.log("connect this to a function that shows all bots")
+                setActiveBot(null)}
+              
+            >
+              Go Back
+            </button>
+            <button
+              className="ui button fluid"
+              onClick= {handleBotEnlist}
+              onClick={()=> addBotToArmy(bot)
+                // console.log(
+                //   "connect this to a function that adds this bot to your bot army list"
+                // )
+              }
+            >  
               Enlist
-              classname='ui button fluid' onClick={() => enlist(bot)}>
-
               </button>
             
           </div>
         </div>
       </div>
       </div>
-    
+  
   );
 }
 
