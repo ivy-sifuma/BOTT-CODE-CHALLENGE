@@ -15,7 +15,7 @@ function BotSpecs({ bot, setActiveBot, setBotArmy}) {
     setYourBots(bts => [...bts, bot])
     setActiveBot(null)
   }
-
+function BotSpecs({ bot}) 
   return (
     <div className="ui segment">
       <div className="ui two column centered grid">
@@ -61,8 +61,8 @@ function BotSpecs({ bot, setActiveBot, setBotArmy}) {
               
               onClick={() => BotsPage()
                 // console.log("connect this to a function that shows all bots")
-                setActiveBot{("null")} 
-              }
+                setActiveBot(null)} 
+              
               
               
             
